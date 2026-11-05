@@ -1,4 +1,6 @@
 # ER Diagram Workshop – Submission Template
+### NAME: MANORAJAPRIYAN.L.E
+### REG.NO: 212225040227
 
 ## Objective
 To understand and apply ER modeling concepts by creating ER diagrams for real-world applications.

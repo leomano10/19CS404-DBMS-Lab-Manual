@@ -75,9 +75,13 @@ END;
 - Insert some sample data into the table.
 - Use a simple cursor to fetch and display employee names and designations.
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
-- 
-## QUERY:
-```
+
+**Output:**  
+The program should display the employee details or an error message.
+
+---
+**QUERY:**
+```sql
 SET SERVEROUTPUT ON;
 
 CREATE TABLE employees (
@@ -127,11 +131,11 @@ EXCEPTION
 END;
 /
 ```
-**Output:**  
-The program should display the employee details or an error message.
-<img width="952" height="372" alt="image" src="https://github.com/user-attachments/assets/ea7ed638-90fb-4e1c-ae7c-804acd27dff9" />
 
----
+*OUTPUT:**
+
+<img width="731" height="228" alt="image" src="https://github.com/user-attachments/assets/e3447bdd-70ba-4d21-8bf0-b6cfe3134701" />
+
 
 ### **Question 2: Parameterized Cursor with Exception Handling**
 
@@ -147,8 +151,12 @@ The program should display the employee details or an error message.
 - Use a parameterized cursor to accept a salary range as input and fetch employees within that range.
 - Implement exception handling to catch and display relevant error messages.
 
-## QUERY:
-```
+**Output:**  
+The program should display the employee details within the specified salary range or an error message if no data is found.
+
+---
+**QUERY:**
+```sql
 SET SERVEROUTPUT ON;
 
 ALTER TABLE employees ADD salary NUMBER;
@@ -203,12 +211,10 @@ EXCEPTION
 END;
 /
 ```
+**OUTPUT:**
 
-**Output:**  
-The program should display the employee details within the specified salary range or an error message if no data is found.
-<img width="940" height="317" alt="image" src="https://github.com/user-attachments/assets/ae2c34b0-c7f7-48e0-92e3-874cbbed4c77" />
+<img width="655" height="239" alt="image" src="https://github.com/user-attachments/assets/1da9dc27-41df-45a3-946e-6e39b521e735" />
 
----
 
 ### **Question 3: Cursor FOR Loop with Exception Handling**
 
@@ -223,9 +229,13 @@ The program should display the employee details within the specified salary rang
 - Insert sample department numbers for employees.
 - Use a cursor FOR loop to fetch and display employee names along with their department numbers.
 - Implement exception handling to catch the relevant exceptions.
-  
-##QUERY:
-```
+
+**Output:**  
+The program should display employee names with their department numbers or the appropriate error message if no data is found.
+
+---
+**QUERY:**
+```sql
 SET SERVEROUTPUT ON;
 
 ALTER TABLE employees ADD dept_no NUMBER;
@@ -273,12 +283,9 @@ END;
 /
 ```
 
-**Output:**  
-The program should display employee names with their department numbers or the appropriate error message if no data is found.
-<img width="932" height="337" alt="image" src="https://github.com/user-attachments/assets/fd948f21-dbed-40bc-9099-4612afea94ea" />
+**OUTPUT:**
 
-
----
+<img width="531" height="224" alt="image" src="https://github.com/user-attachments/assets/b8120477-b757-4e9d-aa57-f507fa8ea3b8" />
 
 ### **Question 4: Cursor with `%ROWTYPE` and Exception Handling**
 
@@ -294,8 +301,13 @@ The program should display employee names with their department numbers or the a
 - Declare a cursor using `%ROWTYPE` to fetch complete rows from the `employees` table.
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
 
-## QUERY:
-```
+**Output:**  
+The program should display employee records or the appropriate error message if no data is found.
+
+---
+
+**QUERY:**
+```SQL
 SET SERVEROUTPUT ON;
 
 DECLARE
@@ -348,12 +360,10 @@ END;
 /
 ```
 
-## Output: 
-The program should display employee records or the appropriate error message if no data is found.
-<img width="945" height="316" alt="image" src="https://github.com/user-attachments/assets/1d721680-2491-46b7-a213-d0511d45565b" />
+**OUTPUT:**
 
+<img width="554" height="209" alt="image" src="https://github.com/user-attachments/assets/9d0d1ac2-2c94-4a79-94bd-36decf701bc7" />
 
----
 
 ### **Question 5: Cursor with FOR UPDATE Clause and Exception Handling**
 
@@ -369,8 +379,12 @@ The program should display employee records or the appropriate error message if 
 - Use a cursor with the `FOR UPDATE` clause to lock the rows of employees in a specific department and update their salary.
 - Implement exception handling to handle `NO_DATA_FOUND` or other errors that may occur.
 
-## QUERY:
-```
+**Output:**  
+The program should update employee salaries and display a message, or it should display an error message if no data is found.
+
+---
+**QUERY:**
+```SQL
 SET SERVEROUTPUT ON;
 
 DECLARE
@@ -422,12 +436,12 @@ EXCEPTION
 END;
 /
 ```
-**Output:**  
-The program should update employee salaries and display a message, or it should display an error message if no data is found.
-<img width="957" height="317" alt="image" src="https://github.com/user-attachments/assets/4dfcee3f-7228-449e-bb29-2c8d6df0494f" />
+**OUTPUT:**
+
+<img width="596" height="253" alt="image" src="https://github.com/user-attachments/assets/567990db-c483-49e0-849b-283aa2204055" />
 
 
----
 
 ## RESULT
-Thus, the program successfully executed and displayed employee details using a cursor.
+Thus, the program successfully executed and displayed employee details using a cursor. 
+

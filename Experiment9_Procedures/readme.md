@@ -62,6 +62,26 @@ Key Differences:
 
 **Expected Output:**  
 Square of 6 is 36
+**Program**
+```
+SET SERVEROUTPUT ON;
+CREATE OR REPLACE PROCEDURE find_square(n NUMBER)
+IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Square of ' || n || ' is ' || (n * n));
+END;
+/
+
+BEGIN
+    find_square(6);
+END;
+/
+```
+**Output**
+
+<img width="781" height="362" alt="image" src="https://github.com/user-attachments/assets/2f6ac313-86a5-40f4-9098-10a365c3d026" />
+
+
 
 ---
 
@@ -76,6 +96,32 @@ Square of 6 is 36
 
 **Expected Output:**  
 Factorial of 5 is 120
+**Program**
+```
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE FUNCTION get_factorial(n NUMBER)
+RETURN NUMBER
+IS
+    fact NUMBER := 1;
+BEGIN
+    FOR i IN 1..n LOOP
+        fact := fact * i;
+    END LOOP;
+
+    RETURN fact;
+END;
+/
+
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Factorial of 5 is ' || get_factorial(5));
+END;
+/
+```
+**Output**
+
+<img width="932" height="355" alt="image" src="https://github.com/user-attachments/assets/8d07b2bd-eb90-4308-a10f-2f0f31498a86" />
+
 
 ---
 
@@ -89,6 +135,30 @@ Factorial of 5 is 120
 
 **Expected Output:**  
 12 is Even
+**Program**
+```
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE PROCEDURE check_even_odd(n NUMBER)
+IS
+BEGIN
+    IF MOD(n, 2) = 0 THEN
+        DBMS_OUTPUT.PUT_LINE(n || ' is Even');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE(n || ' is Odd');
+    END IF;
+END;
+/
+
+BEGIN
+    check_even_odd(12);
+END;
+/
+```
+**Output**
+
+<img width="787" height="366" alt="image" src="https://github.com/user-attachments/assets/4593de42-16fa-4b79-af6f-fa7c90c45e02" />
+
 
 ---
 
@@ -103,6 +173,34 @@ Factorial of 5 is 120
 
 **Expected Output:**  
 Reversed number of 1234 is 4321
+**Program**
+```
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE FUNCTION reverse_number(n NUMBER)
+RETURN NUMBER
+IS
+    num NUMBER := n;
+    rev NUMBER := 0;
+BEGIN
+    WHILE num > 0 LOOP
+        rev := rev * 10 + MOD(num, 10);
+        num := TRUNC(num / 10);
+    END LOOP;
+
+    RETURN rev;
+END;
+/
+
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Reversed number of 1234 is ' || reverse_number(1234));
+END;
+/
+```
+**output**
+
+<img width="842" height="356" alt="image" src="https://github.com/user-attachments/assets/ccbdc46b-4050-40c1-b863-1bf1fdc5b0d6" />
+
 
 ---
 
@@ -121,6 +219,30 @@ Multiplication table of 5:
 5 x 3 = 15  
 ...  
 5 x 10 = 50
+**Program**
+```
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE PROCEDURE print_table(n NUMBER)
+IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Multiplication table of ' || n || ':');
+
+    FOR i IN 1..10 LOOP
+        DBMS_OUTPUT.PUT_LINE(n || ' x ' || i || ' = ' || (n * i));
+    END LOOP;
+END;
+/
+
+BEGIN
+    print_table(5);
+END;
+/
+```
+**Output**
+
+<img width="942" height="522" alt="image" src="https://github.com/user-attachments/assets/a5ec9ae0-2234-409e-82e2-08c9d481664a" />
+
 
 ## RESULT
 Thus, the PL/SQL programs using procedures and functions were written, compiled, and executed successfully.
